@@ -11,6 +11,8 @@ djongo = "*"
 dnspython = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.8"
