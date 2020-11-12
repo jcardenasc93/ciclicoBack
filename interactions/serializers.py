@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
-from .models import Club, Event, Route, AppUser
+from .models import Club, Event, Route, AppUser, Benefit
 
 class ClubSerializer(ModelSerializer):
     class Meta:
@@ -31,5 +31,10 @@ class RoutesSerializer(ModelSerializer):
     )
     class Meta:
         model = Route
-        fields = ['id', 'country', 'city', 'start_latitude', 'start_longitude',
-                  'end_latitude', 'end_longitude', 'user', 'created_at']
+        fields = ['id', 'name', 'country', 'city', 'start_latitude', 'start_longitude',
+                  'end_latitude', 'end_longitude', 'distance_kms', 'user', 'created_at']
+
+class BenefitSerializer(ModelSerializer):
+    class Meta:
+        model = Benefit
+        fields = '__all__'

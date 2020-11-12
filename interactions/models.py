@@ -15,6 +15,7 @@ class Event(models.Model):
     name = models.CharField(max_length=255)
     location_latitude = models.CharField(max_length=100, blank=True, null=True)
     location_longitude = models.CharField(max_length=100, blank=True, null=True)
+    description = models.TextField(max_length=512)
     date = models.DateField()
     time = models.TimeField(null=True, blank=True)
     club = models.ForeignKey(Club, on_delete=models.CASCADE, verbose_name='event_club')
@@ -46,6 +47,12 @@ class Route(models.Model):
     start_longitude = models.CharField(max_length=100)
     end_latitude = models.CharField(max_length=100)
     end_longitude = models.CharField(max_length=100)
+    distance_kms = models.DecimalField(max_digits=5, decimal_places=2)
     user = models.ForeignKey(AppUser, on_delete=models.CASCADE, verbose_name='route_user')
     created_at = models.DateField(auto_now_add=True)
+
+class Benefit(models.Model):
+    name = models.CharField(max_length=100)
+    distance_kms = models.DecimalField(max_digits=5, decimal_places=2)
+
 

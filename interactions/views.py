@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import Club, Event, Route, AppUser
-from .serializers import ClubSerializer, EventSerializer, RoutesSerializer, AppUserSerializer
+from .models import Club, Event, Route, AppUser, Benefit
+from .serializers import ClubSerializer, EventSerializer, RoutesSerializer, AppUserSerializer, BenefitSerializer
 # Create your views here.
 
 class ClubViewSet(ModelViewSet):
@@ -18,3 +18,7 @@ class AppUserViewSet(ModelViewSet):
 class RouteViewSet(ModelViewSet):
     queryset = Route.objects.all()
     serializer_class = RoutesSerializer
+
+class BenefitViewSet(ModelViewSet):
+    queryset = Benefit.objects.all()
+    serializer_class = BenefitSerializer

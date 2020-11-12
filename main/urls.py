@@ -18,7 +18,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 # import views
-from interactions.views import ClubViewSet, EventViewSet, RouteViewSet, AppUserViewSet
+from interactions.views import ClubViewSet, EventViewSet, RouteViewSet, AppUserViewSet, BenefitViewSet
 from analytics.views import DistanceViewSet
 from app_services.views import RentPointViewSet, MaintanceStoreViewSet, TheftReportViewSet
 
@@ -31,6 +31,7 @@ router.register(r'distances', DistanceViewSet)
 router.register(r'maintance-stores', MaintanceStoreViewSet)
 router.register(r'rent-points', RentPointViewSet)
 router.register(r'theft-reports', TheftReportViewSet)
+router.register(r'benefits', BenefitViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),    
